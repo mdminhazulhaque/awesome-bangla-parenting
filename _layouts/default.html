@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>{{ site.title }}</title>
+  </head>
+    <body>
+      <section class="section">
+        <div class="container">
+          <div class="content is-large">
+            <h1 class="title">{{ site.title }}</h1>
+            <p>{{ site.subtitle }}</p>
+            {% for category in site.data.parenting %}
+            {% assign title = category[0] %}
+              <article class="message is-medium is-info">
+                <div class="message-header">
+                  <p>{{ title }}</p>
+                </div>
+                <div class="message-body">
+                  {% assign contents = category[1] %}
+                  {% for content in contents %}
+                    <span class="icon"><i class="fas fa-link"></i></span>
+                    &nbsp;
+                    <a href="{{ content[1] }}">{{ content[0] }}</a><br>
+                  {% endfor %}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </body>
+</html>
