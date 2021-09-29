@@ -1,2 +1,4 @@
 title: Awesome Bangla Parenting
 subtitle: বাংলাদেশীদের জন্য বাংলা ভাষায় প্যারেন্টিং রিলেটেড কনটেন্ট
+exclude:
+  - genmd.py
