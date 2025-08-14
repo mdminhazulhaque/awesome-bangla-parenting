@@ -1,66 +1,89 @@
-# Websites
+# Awesome Bangla Parenting
 
-* [পারমিতার প্রতিদিন (Web)](https://www.paromitarprotidin.com/)
-* [পারমিতার প্রতিদিন (Facebook)](https://www.facebook.com/paromitar.protidin)
-* [Bangladesh Breastfeeding Foundation](https://www.facebook.com/Breast.Feeding.Foundation/)
-* [Fairyland Parents](https://myfairylandbd.com/)
-* [FirstCry Parenting](https://banglaparenting.firstcry.com/)
-* [Royal Bangla](https://www.royalbangla.com/parenting/)
-* [প্যারেন্টিং - Mohioshi](https://www.mohioshi.com/category/parenting/)
-* [প্যারেন্টিং :: GleeEra](https://gleeera.com/bangla/culture/guideline/57)
-* [প্যারেন্টীং • হয়তোবা.কম](https://hoytoba.com/parenting/)
-* [বেবি ডেস্টিনেশন](https://bangla.babydestination.com/)
-* [মা ও শিশু | Shajgoj](https://www.shajgoj.com/category/health/mother-child/)
-* [মাতৃত্ব | Matritto](https://matritto.com/)
-* [Roar বাংলা](https://archive.roar.media/?s=%E0%A6%B6%E0%A6%BF%E0%A6%B6%E0%A7%81)
-* [শিশুর স্বাস্থ্য কথা](http://babyhealth24.com/)
+বাংলা ভাষাভাষী অভিভাবকদের জন্য কিউরেটেড রিসোর্স (ওয়েবসাইট, গ্রুপ, অ্যাপ, ইউটিউব চ্যানেল ইত্যাদি) – সহজ একটি স্ট্যাটিক সাইট হিসেবে পরিবেশিত।
 
-# Facebook Groups
+## 🔧 Stack
+- Jekyll (GitHub Pages)
+- Bootstrap 5 + Bootstrap Icons
+- Data source: `_data/parenting.json`
 
-* [প্যারেন্টিং এর পাঠশালা](https://www.facebook.com/groups/607836053181602/)
-* [প্রেগন্যান্সি থেকে প্যারেন্টিং](https://www.facebook.com/groups/fairylandbd/)
-* [বাবুই - প্যারেন্টিং এর দুনিয়া](https://www.facebook.com/groups/807593319600809/)
-* [শিশুদের দিনলিপি](https://web.facebook.com/groups/462060684625397)
-* [Matritto। মাতৃত্ব: journey with pregnancy and motherhood](https://web.facebook.com/groups/matritto)
+## 🚀 লোকাল ডেভেলপমেন্ট (Jekyll)
+Prerequisites: Ruby (>= 3.1), Bundler
 
-# Android Apps
+```bash
+git clone https://github.com/mdminhazulhaque/awesome-bangla-parenting.git
+cd awesome-bangla-parenting
+bundle install
+bundle exec jekyll serve --livereload
+```
 
-* [MedEasy](https://play.google.com/store/apps/details?id=com.bondhu.daktar.daktarbondhu)
-* [DocTime](https://play.google.com/store/apps/details?id=com.media365ltd.doctime)
-* [Flo](https://play.google.com/store/apps/details?id=org.iggymedia.periodtracker)
-* [GLOW](https://play.google.com/store/apps/details?id=com.glow.android.baby)
-* [Healofy](https://play.google.com/store/apps/details?id=com.healofy)
-* [Praava Health](https://play.google.com/store/apps/details?id=com.praava.patientportal)
-* [ডাক্তার দেখাও](https://play.google.com/store/apps/details?id=com.doctordekhao.patient)
+সাইট দেখা যাবে: http://127.0.0.1:4000
 
-# iOS Apps
+## 🗂 কাঠামো
+```
+_config.yml          # সাইট কনফিগ
+_layouts/default.html# প্রধান লেআউট
+_data/parenting.json # রিসোর্স ডেটা (আপনি এখানেই পরিবর্তন যোগ করবেন)
+index.md             # ইনডেক্স পেজ (লেআউট রেন্ডার)
+```
 
-* [DocTime](https://apps.apple.com/ae/app/doctime/id1586295223)
-* [Flo](https://apps.apple.com/us/app/flo-period-pregnancy-tracker/id1038369065)
-* [GLOW](https://apps.apple.com/kg/app/glow-baby-tracker-growth-app/id1077177456)
-* [Healofy](https://apps.apple.com/us/app/healofy-pregnancy-parenting/id6444273441)
+## ➕ নতুন রিসোর্স যুক্ত করার নিয়ম
+সব কনটেন্ট `_data/parenting.json` ফাইলে JSON অবজেক্ট আকারে ক্যাটেগরি অনুসারে রাখা হয়। স্ট্রাকচার:
 
-# Online Shops
+```jsonc
+{
+	"Websites": {
+		"Example Site": "https://example.com"
+	},
+	"Facebook Groups": {
+		"Example Group": "https://facebook.com/groups/example"
+	}
+}
+```
 
-* [Kids Paradise](https://web.facebook.com/KidsParadiseBangladesh/)
-* [Modish Mart](https://web.facebook.com/modishbdmart)
-* [ToyGhor](https://web.facebook.com/mytoyghor)
-* [Abc Toys BD](https://abctoysbd.com/)
-* [Abgos (Authentic Philips Product)](https://www.facebook.com/abgos/)
-* [Baby Care](https://www.babycare.com.bd/)
-* [Chaldal](https://chaldal.com/newborn-essentials)
-* [Kodomo](https://www.kodomo.com.bd/)
-* [PUR Bangladesh](https://pur.com.bd/)
-* [The Mall BD](https://www.themallbd.com/)
-* [পরিবার ও শিশু বিষয়ক | Rokomari.com](https://www.rokomari.com/book/category/620/parenting)
+### ধাপসমূহ
+1. `/_data/parenting.json` ওপেন করুন
+2. উপযুক্ত ক্যাটেগরির মধ্যে নতুন key-value জোড়া যোগ করুন
+3. Key = প্রদর্শিত নাম, Value = URL (https, http নয় এমন হলে সাধারণত গ্রহণযোগ্য নয়)
+4. কমা (`,`) ব্যবহারে সতর্ক থাকুন – JSON ট্রেইলিং কমা সাপোর্ট করে না
+5. লোকালিতে `bundle exec jekyll build` অথবা `serve` রান করে ভিজ্যুয়ালি চেক করুন
 
-# Youtube Channels
+### নতুন ক্যাটেগরি যোগ করতে চাইলে
+নতুন ক্যাটেগরি নাম একটি নতুন অবজেক্ট key হিসেবে যোগ করুন এবং ভিতরে একইভাবে নাম: URL জোড়া দিন। উদাহরণ:
+```jsonc
+"Podcasts": {
+	"Parenting Talk": "https://example.com/podcast"
+}
+```
 
-* [Doctorola TV](https://www.youtube.com/c/DoctorolaTV/videos)
-* [Jugnu Kids](https://www.youtube.com/channel/UCWyfOC7fLxYch3IkQ58fMrA)
-* [Kids and Mom](https://www.youtube.com/c/KidsandMom/videos)
-* [LifeSpring Limited](https://www.youtube.com/c/LifeSpringLimited/videos)
-* [PROTTOY TV](https://www.youtube.com/channel/UCvRtRUi_8bLjpRoL1VqShug/videos)
-* [The Bong Parenting](https://www.youtube.com/c/TheBongParenting/videos)
-* [শিশুর জন্মের পর পিতামাতার ১১টি করণীয় - শায়খ আহমাদুল্লাহ](https://www.youtube.com/watch?v=oBYcqcXha5E)
+## ✅ কনটেন্ট গাইডলাইন
+- বিশ্বস্ত, কার্যকরী ও প্যারেন্টিং সম্পর্কিত হওয়া উচিত
+- ভাঙা / রিডাইরেক্টেড / সন্দেহজনক লিংক এড়িয়ে চলুন
+- আগের এন্ট্রি আছে কি না সার্চ করে নিন (ডুপ্লিকেট হ্রাস)
+- ব্যক্তিগত ব্লগ হলে ধারাবাহিক প্যারেন্টিং কনটেন্ট থাকতে হবে
 
+## 🔍 যাচাই (Validation)
+JSON সিনট্যাক্স ভেরিফাই করতে দ্রুত:
+```bash
+python -m json.tool _data/parenting.json > /dev/null && echo "Valid JSON"
+```
+
+## 🛠 বিল্ড
+```bash
+bundle exec jekyll build
+```
+আউটপুট জেনারেট হবে `_site/` ডিরেক্টরিতে।
+
+## 🤝 অবদান
+Pull Request স্বাগতম! সংক্ষেপে:
+1. ফর্ক করুন
+2. নতুন ব্রাঞ্চ নিন
+3. পরিবর্তন করুন (বিশেষ করে শুধু JSON এ হলে সবচেয়ে ভালো)
+4. লোকাল বিল্ড পাস নিশ্চিত করুন
+5. PR ওপেন করুন (পরিবর্তনের ছোট বিবরণ সহ)
+
+## 📜 লাইসেন্স
+MIT লাইসেন্স
+
+---
+আরও আইডিয়া / উন্নয়ন প্রস্তাব দিতে Issue খুলতে পারেন। ধন্যবাদ! 🙏
