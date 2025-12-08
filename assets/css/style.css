@@ -1,0 +1,206 @@
+:root {
+  --bg-color: #fdfbf7;
+  /* Warm off-white */
+  --text-color: #2c3e50;
+  /* Dark slate blue for text */
+  --accent-color: #e67e22;
+  /* Soft orange for highlights */
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --card-hover-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --font-main: 'Noto Serif Bengali', serif;
+  --spacing-unit: 1rem;
+  --border-radius: 12px;
+  --primary-color: #34495e;
+  --link-color: #2980b9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-brand img {
+  height: 32px;
+  width: auto;
+}
+
+.btn-github {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-github:hover {
+  background-color: #2c3e50;
+  transform: translateY(-1px);
+  color: white;
+}
+
+/* Main Content */
+main {
+  padding: 3rem 0;
+}
+
+.grid {
+  /* Masonry handles layout, so we just need to ensure the container is ready */
+  margin: 0 auto;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 30%;
+  /* 3 columns with 30px gutter (approx 3.33% gap) */
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+
+  .grid-sizer,
+  .grid-item {
+    width: 48%;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
+}
+
+/* Category Card */
+.category-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card:hover {
+  box-shadow: var(--card-hover-shadow);
+}
+
+.category-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-content {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.resource-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: var(--text-color);
+  transition: background-color 0.2s ease;
+}
+
+.resource-link:last-child {
+  border-bottom: none;
+}
+
+.resource-link:hover {
+  background-color: #f8f9fa;
+  color: var(--link-color);
+  padding-left: 1.75rem;
+  /* Subtle slide effect */
+}
+
+.icon-external {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* Footer (if needed) */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-brand span {
+    font-size: 1.2rem;
+  }
+}
