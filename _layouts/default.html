@@ -29,8 +29,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
-    async></script>
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
 
   <title>{{ site.title }}</title>
 </head>
@@ -50,8 +49,7 @@
   </nav>
 
   <main class="container">
-    <div class="grid"
-      data-masonry='{"percentPosition": true, "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "gutter": 30 }'>
+    <div class="grid">
       <div class="grid-sizer"></div>
       {% for category in site.data.parenting %}
       {% assign title = category[0] %}
@@ -79,6 +77,20 @@
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var grid = document.querySelector('.grid');
+      if (grid && typeof Masonry !== 'undefined') {
+        new Masonry(grid, {
+          percentPosition: true,
+          itemSelector: '.grid-item',
+          columnWidth: '.grid-sizer',
+          gutter: 30
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
