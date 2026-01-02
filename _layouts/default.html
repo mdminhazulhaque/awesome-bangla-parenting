@@ -75,11 +75,15 @@
   </main>
 
   <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    <p>&copy; <span id="current-year"></span> {{ site.title }}. All rights reserved.</p>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Set dynamic year in footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // Initialize Masonry grid
       var grid = document.querySelector('.grid');
       if (grid && typeof Masonry !== 'undefined') {
         new Masonry(grid, {
