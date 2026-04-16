@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 
 <head>
   <meta charset="utf-8">
@@ -18,11 +18,9 @@
     gtag('config', 'UA-57632461-8', { 'anonymize_ip': true });
   </script>
 
-  <!-- Fonts -->
+  <!-- Fonts (Anek Bangla + Quicksand loaded via CSS @import) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Custom Styles -->
@@ -39,14 +37,26 @@
     <div class="container navbar-content">
       <a class="navbar-brand" href="#">
         <img src="favicon.png" alt="Logo">
-        <span>{{ site.subtitle }}</span>
+        <span>{{ site.title }}</span>
       </a>
-      <a class="btn-github" href="https://github.com/mdminhazulhaque/awesome-bangla-parenting">
+      <a class="btn-github" href="https://github.com/mdminhazulhaque/awesome-bangla-parenting" target="_blank" rel="noopener">
         <i class="bi bi-github"></i>
         <span>GitHub</span>
       </a>
     </div>
   </nav>
+
+  <section class="hero">
+    <h1>{{ site.subtitle }}</h1>
+    <p>বাংলাদেশী বাবা-মায়েদের জন্য প্রয়োজনীয় ওয়েবসাইট, অ্যাপ ও রিসোর্সের সংকলন</p>
+    <div class="hero-decoration">
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+    </div>
+  </section>
 
   <main class="container">
     <div class="grid">
@@ -56,7 +66,21 @@
       <div class="grid-item">
         <div class="category-card">
           <div class="category-header">
-            <i class="bi bi-folder2-open"></i>
+            {% if title == "Websites" %}
+              <i class="bi bi-globe2"></i>
+            {% elsif title == "Facebook Groups" %}
+              <i class="bi bi-people-fill"></i>
+            {% elsif title == "Android Apps" %}
+              <i class="bi bi-android2"></i>
+            {% elsif title == "iOS Apps" %}
+              <i class="bi bi-apple"></i>
+            {% elsif title == "Online Shops" %}
+              <i class="bi bi-bag-heart-fill"></i>
+            {% elsif title == "Youtube Channels" %}
+              <i class="bi bi-youtube"></i>
+            {% else %}
+              <i class="bi bi-bookmark-star-fill"></i>
+            {% endif %}
             <span>{{ title }}</span>
           </div>
           <div class="category-content">
@@ -64,7 +88,7 @@
             {% for content in contents %}
             <a href="{{ content[1] }}" target="_blank" rel="noopener" class="resource-link">
               <span>{{ content[0] }}</span>
-              <i class="bi bi-box-arrow-up-right icon-external"></i>
+              <i class="bi bi-arrow-up-right icon-external"></i>
             </a>
             {% endfor %}
           </div>
@@ -75,22 +99,20 @@
   </main>
 
   <footer>
-    <p>&copy; <span id="current-year"></span> {{ site.title }}. All rights reserved.</p>
+    <p>&copy; <span id="current-year"></span> {{ site.title }}</p>
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set dynamic year in footer
-      document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
-      // Initialize Masonry grid
+    document.addEventListener('DOMContentLoaded', function () {
       var grid = document.querySelector('.grid');
       if (grid && typeof Masonry !== 'undefined') {
         new Masonry(grid, {
           percentPosition: true,
           itemSelector: '.grid-item',
           columnWidth: '.grid-sizer',
-          gutter: 30
+          gutter: 24
         });
       }
     });
